@@ -9,8 +9,15 @@ import { Task } from 'src/app/Task';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: Task | null = null;
+  @Output() onDelete = new EventEmitter<Task>();
 
   faTimes = faTimes;
+
+  onDeleteClick(task: Task | null) {
+    if(task) {
+      this.onDelete.emit(task);
+    }
+  }
 
   ngOnInit(): void {}
 }
