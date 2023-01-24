@@ -1,11 +1,4 @@
-declare global {
-  type Task = {
-    id?: number;
-    text: string;
-    day: string;
-    reminder: boolean;
-  }
-}
+import { Task } from "./Task";
 
 export const TASKS: Task[] = [
   {
