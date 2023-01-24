@@ -1,1 +1,8 @@
-<app-task-item *ngFor="let task of tasks" [task]="task" (onDelete)="handleOnDelete(task)" ></app-task-item>
+<app-add-task (formSubmit)="handleSubmit($event)"></app-add-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDelete)="handleOnDelete(task)"
+  (onToggle)="handleOnToggle(task)"
+>
+</app-task-item>

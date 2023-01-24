@@ -10,12 +10,19 @@ import { Task } from 'src/app/Task';
 export class TaskItemComponent implements OnInit {
   @Input() task: Task | null = null;
   @Output() onDelete = new EventEmitter<Task>();
+  @Output() onToggle = new EventEmitter<Task>();
 
   faTimes = faTimes;
 
   onDeleteClick(task: Task | null) {
-    if(task) {
+    if (task) {
       this.onDelete.emit(task);
+    }
+  }
+
+  onToggleClick(task: Task | null) {
+    if (task) {
+      this.onToggle.emit(task);
     }
   }
 

@@ -17,4 +17,12 @@ export class TaskService {
   deleteTask(task: Task) {
     return this.httpClient.delete(`${this.apiUrl}/${task.id}`);
   }
+
+  updateTaskReminder(task: Task) {
+    return this.httpClient.put<Task>(`${this.apiUrl}/${task.id}`, task);
+  }
+
+  addTask(task: Task) {
+    return this.httpClient.post<Task>(this.apiUrl, task);
+  }
 }
